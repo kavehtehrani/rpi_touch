@@ -18,6 +18,7 @@ class RPIE_GUI:
         self.frame.pack()
         self.create_gui()
         self.r = reddit.rpie_reddit()
+        self.wnd_joke = None
 
     def create_gui(self):
         self.l_entries = []
@@ -34,11 +35,14 @@ class RPIE_GUI:
 
     def gui_dad_joke(self):
         str_joke, str_punchline = self.r.get_dadjoke()
-        self.pop_text_window(f"{str_joke}...\n{str_punchline}")
+        self.pop_text_window(f"{str_joke}...\n\n{str_punchline}")
 
     def pop_text_window(self, str_text):
-        t = tk.Toplevel(self.master)
-        l = ttk.Label(t, text=str_text)
+        if self.wnd_joke:
+            self.wnd_joke.destroy()
+
+        self.wnd_joke = tk.Toplevel(self.master)
+        l = ttk.Label(self.wnd_joke, text=str_text, wrap=250)
         l.grid(row=0, column=0)
 
 
