@@ -39,43 +39,17 @@ class RPIE_GUI:
     def gui_dad_joke(self):
         str_joke, str_punchline = self.r.get_dadjoke()
         self.pop_text_window(f"{str_joke}...\n\n{str_punchline}")
-<<<<<<< HEAD
 
     def gui_smolcat(self):
         self.r.get_smol_cat()
-=======
->>>>>>> 36afc01c532904f732820037b881af5c3b25e3b1
 
     def pop_text_window(self, str_text):
         if self.wnd_joke:
             self.wnd_joke.destroy()
 
         self.wnd_joke = tk.Toplevel(self.master)
-<<<<<<< HEAD
-        self.center(self.wnd_joke)
-=======
->>>>>>> 36afc01c532904f732820037b881af5c3b25e3b1
         l = ttk.Label(self.wnd_joke, text=str_text, wrap=250)
         l.grid(row=0, column=0)
-
-    def center(toplevel):
-        toplevel.update_idletasks()
-
-        # Tkinter way to find the screen resolution
-        # screen_width = toplevel.winfo_screenwidth()
-        # screen_height = toplevel.winfo_screenheight()
-
-        # PyQt way to find the screen resolution
-        app = QtGui.QApplication([])
-        screen_width = app.desktop().screenGeometry().width()
-        screen_height = app.desktop().screenGeometry().height()
-
-        size = tuple(int(_) for _ in toplevel.geometry().split('+')[0].split('x'))
-        x = screen_width/2 - size[0]/2
-        y = screen_height/2 - size[1]/2
-
-        toplevel.geometry("+%d+%d" % (x, y))
-        toplevel.title("Centered!")
 
 if __name__ == '__main__':
     root = ThemedTk(themebg=True)

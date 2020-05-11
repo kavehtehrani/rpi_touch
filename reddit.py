@@ -50,7 +50,7 @@ class rpie_reddit:
         ImageNumpyFormat = np.asarray(ImageItself)
         plt.imshow(ImageNumpyFormat)
         plt.draw()
-        plt.pause(510) # pause how many seconds
+        plt.pause(7) # pause how many seconds
         plt.close()
 
         return hot_posts[nrand]
