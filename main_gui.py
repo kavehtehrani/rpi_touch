@@ -39,16 +39,22 @@ class RPIE_GUI:
     def gui_dad_joke(self):
         str_joke, str_punchline = self.r.get_dadjoke()
         self.pop_text_window(f"{str_joke}...\n\n{str_punchline}")
+<<<<<<< HEAD
 
     def gui_smolcat(self):
         self.r.get_smol_cat()
+=======
+>>>>>>> 36afc01c532904f732820037b881af5c3b25e3b1
 
     def pop_text_window(self, str_text):
         if self.wnd_joke:
             self.wnd_joke.destroy()
 
         self.wnd_joke = tk.Toplevel(self.master)
+<<<<<<< HEAD
         self.center(self.wnd_joke)
+=======
+>>>>>>> 36afc01c532904f732820037b881af5c3b25e3b1
         l = ttk.Label(self.wnd_joke, text=str_text, wrap=250)
         l.grid(row=0, column=0)
 
