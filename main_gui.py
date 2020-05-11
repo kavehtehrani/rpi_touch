@@ -55,6 +55,6 @@ if __name__ == '__main__':
     root = ThemedTk(themebg=True)
     app = RPIE_GUI(master=root)
     root.set_theme('radiance')
-    root.iconbitmap(r'panda.ico')
+    # root.iconbitmap(r'panda.ico')
 
     root.mainloop()
